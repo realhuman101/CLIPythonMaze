@@ -14,11 +14,9 @@ def surroundingCells(maze: list[list[str]], randWall: list[int]):
 
 	return sCells
 
-def makeMaze() -> list[list[str]]:
+def makeMaze(width: int, height: int) -> list[list[str]]:
 	cell = ' '
 	unvisited = '-'
-	height = 11
-	width = 27
 	maze = []
 
 	for i in range(0, height):

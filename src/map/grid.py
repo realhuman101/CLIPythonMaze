@@ -3,7 +3,7 @@ from . import maze
 class grid:
     def __init__(self, width: int, height: int) -> None:
         self.size = (width, height)
-        self.maze = maze.makeMaze()
+        self.maze = maze.makeMaze(width, height)
         self.clear()
 
     def clear(self) -> None:
@@ -13,7 +13,7 @@ class grid:
         self.board[y][x] = value
         
     def newMaze(self) -> list[list[str]]:
-        self.maze = maze.makeMaze()
+        self.maze = maze.makeMaze(self.width, self.height)
         return self.maze
 
     def print(self) -> None:
