@@ -1,7 +1,6 @@
 import random
 
 def surroundingCells(maze: list[list[str]], randWall: list[int]):
-	print(randWall)
 	sCells = 0
 	if (maze[randWall[0]-1][randWall[1]] == ' '):
 		sCells += 1

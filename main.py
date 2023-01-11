@@ -66,8 +66,9 @@ while True:
 
         if ('y' not in input('Would you like to play again? ').lower()):
             break
-
+        
         board.newMaze()
+        user = player(width, height, 1, 0, board.maze)
         beginTime = time.time()
     
     os.system(CLEAR)
