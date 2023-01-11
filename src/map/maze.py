@@ -42,10 +42,10 @@ def makeMaze(width: int, height: int) -> list[list[str]]:
 	walls.append([startingHeight, startingWidth + 1])
 	walls.append([startingHeight + 1, startingWidth])
 
-	maze[startingHeight-1][startingWidth] = '='
-	maze[startingHeight][startingWidth - 1] = '='
-	maze[startingHeight][startingWidth + 1] = '='
-	maze[startingHeight + 1][startingWidth] = '='
+	maze[startingHeight-1][startingWidth] = '█'
+	maze[startingHeight][startingWidth - 1] = '█'
+	maze[startingHeight][startingWidth + 1] = '█'
+	maze[startingHeight + 1][startingWidth] = '█'
 
 	while walls:
 		randWall = walls[int(random.random()*len(walls))-1]
@@ -59,19 +59,19 @@ def makeMaze(width: int, height: int) -> list[list[str]]:
 
 					if (randWall[0] != 0):
 						if (maze[randWall[0]-1][randWall[1]] != ' '):
-							maze[randWall[0]-1][randWall[1]] = '='
+							maze[randWall[0]-1][randWall[1]] = '█'
 						if ([randWall[0]-1, randWall[1]] not in walls):
 							walls.append([randWall[0]-1, randWall[1]])
 
 					if (randWall[0] != height-1):
 						if (maze[randWall[0]+1][randWall[1]] != ' '):
-							maze[randWall[0]+1][randWall[1]] = '='
+							maze[randWall[0]+1][randWall[1]] = '█'
 						if ([randWall[0]+1, randWall[1]] not in walls):
 							walls.append([randWall[0]+1, randWall[1]])
 
 					if (randWall[1] != 0):	
 						if (maze[randWall[0]][randWall[1]-1] != ' '):
-							maze[randWall[0]][randWall[1]-1] = '='
+							maze[randWall[0]][randWall[1]-1] = '█'
 						if ([randWall[0], randWall[1]-1] not in walls):
 							walls.append([randWall[0], randWall[1]-1])
 				
@@ -91,19 +91,19 @@ def makeMaze(width: int, height: int) -> list[list[str]]:
 
 					if (randWall[0] != 0):
 						if (maze[randWall[0]-1][randWall[1]] != ' '):
-							maze[randWall[0]-1][randWall[1]] = '='
+							maze[randWall[0]-1][randWall[1]] = '█'
 						if ([randWall[0]-1, randWall[1]] not in walls):
 							walls.append([randWall[0]-1, randWall[1]])
 
 					if (randWall[1] != 0):
 						if (maze[randWall[0]][randWall[1]-1] != ' '):
-							maze[randWall[0]][randWall[1]-1] = '='
+							maze[randWall[0]][randWall[1]-1] = '█'
 						if ([randWall[0], randWall[1]-1] not in walls):
 							walls.append([randWall[0], randWall[1]-1])
 
 					if (randWall[1] != width-1):
 						if (maze[randWall[0]][randWall[1]+1] != ' '):
-							maze[randWall[0]][randWall[1]+1] = '='
+							maze[randWall[0]][randWall[1]+1] = '█'
 						if ([randWall[0], randWall[1]+1] not in walls):
 							walls.append([randWall[0], randWall[1]+1])
 
@@ -122,17 +122,17 @@ def makeMaze(width: int, height: int) -> list[list[str]]:
 
 					if (randWall[0] != height-1):
 						if (maze[randWall[0]+1][randWall[1]] != ' '):
-							maze[randWall[0]+1][randWall[1]] = '='
+							maze[randWall[0]+1][randWall[1]] = '█'
 						if ([randWall[0]+1, randWall[1]] not in walls):
 							walls.append([randWall[0]+1, randWall[1]])
 					if (randWall[1] != 0):
 						if (maze[randWall[0]][randWall[1]-1] != ' '):
-							maze[randWall[0]][randWall[1]-1] = '='
+							maze[randWall[0]][randWall[1]-1] = '█'
 						if ([randWall[0], randWall[1]-1] not in walls):
 							walls.append([randWall[0], randWall[1]-1])
 					if (randWall[1] != width-1):
 						if (maze[randWall[0]][randWall[1]+1] != ' '):
-							maze[randWall[0]][randWall[1]+1] = '='
+							maze[randWall[0]][randWall[1]+1] = '█'
 						if ([randWall[0], randWall[1]+1] not in walls):
 							walls.append([randWall[0], randWall[1]+1])
 
@@ -151,17 +151,17 @@ def makeMaze(width: int, height: int) -> list[list[str]]:
 
 					if (randWall[1] != width-1):
 						if (maze[randWall[0]][randWall[1]+1] != ' '):
-							maze[randWall[0]][randWall[1]+1] = '='
+							maze[randWall[0]][randWall[1]+1] = '█'
 						if ([randWall[0], randWall[1]+1] not in walls):
 							walls.append([randWall[0], randWall[1]+1])
 					if (randWall[0] != height-1):
 						if (maze[randWall[0]+1][randWall[1]] != ' '):
-							maze[randWall[0]+1][randWall[1]] = '='
+							maze[randWall[0]+1][randWall[1]] = '█'
 						if ([randWall[0]+1, randWall[1]] not in walls):
 							walls.append([randWall[0]+1, randWall[1]])
 					if (randWall[0] != 0):	
 						if (maze[randWall[0]-1][randWall[1]] != ' '):
-							maze[randWall[0]-1][randWall[1]] = '='
+							maze[randWall[0]-1][randWall[1]] = '█'
 						if ([randWall[0]-1, randWall[1]] not in walls):
 							walls.append([randWall[0]-1, randWall[1]])
 
@@ -178,7 +178,7 @@ def makeMaze(width: int, height: int) -> list[list[str]]:
 	for i in range(height):
 		for j in range(width):
 			if (maze[i][j] == '-'):
-				maze[i][j] = '='
+				maze[i][j] = '█'
 
 	for i in range(width):
 		if (maze[1][i] == ' '):

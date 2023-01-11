@@ -24,25 +24,25 @@ class player:
 				self.y -= 1
 
 				if 0 <= self.y < self.size[1]:
-					if self.maze[self.y][self.x] == '=':
+					if self.maze[self.y][self.x] == '█':
 						self.y += 1
 			case 'a':
 				self.x -= 1
 
 				if 0 <= self.x < self.size[0]:
-					if self.maze[self.y][self.x] == '=':
+					if self.maze[self.y][self.x] == '█':
 						self.x += 1
 			case 's':
 				self.y += 1
 
 				if 0 <= self.y < self.size[1]:
-					if self.maze[self.y][self.x] == '=':
+					if self.maze[self.y][self.x] == '█':
 						self.y -= 1
 			case 'd':
 				self.x += 1
 
 				if 0 <= self.x < self.size[0]:
-					if self.maze[self.y][self.x] == '=':
+					if self.maze[self.y][self.x] == '█':
 						self.x -= 1
 
 		if self.x < 0:
