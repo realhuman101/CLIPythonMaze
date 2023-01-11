@@ -1,0 +1,2 @@
+class ReachedEnd(Exception):
+	pass
