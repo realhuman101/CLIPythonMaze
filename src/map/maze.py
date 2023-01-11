@@ -7,7 +7,7 @@ def surroundingCells(maze: list[list[str]], randWall: list[int]):
 	if (maze[randWall[0]+1][randWall[1]] == ' '):
 		sCells += 1
 	if (maze[randWall[0]][randWall[1]-1] == ' '):
-		sCells +=1
+		sCells += 1
 	if (maze[randWall[0]][randWall[1]+1] == ' '):
 		sCells += 1
 
