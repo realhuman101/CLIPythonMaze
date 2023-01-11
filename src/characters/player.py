@@ -1,3 +1,5 @@
+from ..exceptions import *
+
 class player:
 	def __init__(self, width: int, height: int, startX: int, startY: int, maze: list[list[str]]) -> None:
 		self.CHARACTERS = {
@@ -53,4 +55,5 @@ class player:
 		elif self.y >= self.size[1]:
 			self.y = self.size[1]-1
 
-			
+		if self.y == self.size[1]-1:
+			raise ReachedEnd

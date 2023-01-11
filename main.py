@@ -6,6 +6,9 @@ from src.exceptions import *
 import keyboard
 import os
 import time
+import datetime
+
+CLEAR = 'clear' # 'cls'/'clear' based on your OS
 
 while True:
     try:
@@ -31,20 +34,47 @@ while True:
 board = grid(width, height)
 user = player(width, height, 1, 0, board.maze)
 
+score = 0
+completed = 0
+
+beginTime = time.time()
+
 while True:
-    if keyboard.is_pressed('w'):
-        user.move('w')
-    if keyboard.is_pressed('a'):
-        user.move('a')
-    if keyboard.is_pressed('s'):
-        user.move('s')
-    if keyboard.is_pressed('d'):
-        user.move('d')
+    try:
+        if keyboard.is_pressed('w'):
+            user.move('w')
+        if keyboard.is_pressed('a'):
+            user.move('a')
+        if keyboard.is_pressed('s'):
+            user.move('s')
+        if keyboard.is_pressed('d'):
+            user.move('d')
+
+    except ReachedEnd:
+        os.system(CLEAR)
+
+        completed += 1
+
+        currTime = time.time()-beginTime
+
+        addScore = round(3_600-currTime, 2) # 3,600 = 1 hour
+        if addScore < 0: addScore = 0
+
+        score += addScore
+
+        print(f'Congratulations! You have reached the end of the maze!\nYou have completed a total of {completed} mazes!\nYou gained {addScore} points!\nYour total score is currently {score}!')
+
+        if ('y' not in input('Would you like to play again? ').lower()):
+            break
+
+        board.newMaze()
+        beginTime = time.time()
     
-    os.system('clear') # 'cls'/'clear' based on your OS
+    os.system(CLEAR)
 
     board.clear()
     board.change(user.x, user.y, user.char)
     board.print()
+    print(f'\n\nScore: {score}\nTimer: {str(datetime.timedelta(seconds=time.time()-beginTime))}')
 
     time.sleep(refresh)

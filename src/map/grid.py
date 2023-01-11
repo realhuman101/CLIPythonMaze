@@ -13,7 +13,7 @@ class grid:
         self.board[y][x] = value
         
     def newMaze(self) -> list[list[str]]:
-        self.maze = maze.makeMaze(self.width, self.height)
+        self.maze = maze.makeMaze(*self.size)
         return self.maze
 
     def print(self) -> None:
