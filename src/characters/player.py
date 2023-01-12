@@ -2,12 +2,12 @@ from ..exceptions import *
 
 class player:
 	def __init__(self, width: int, height: int, startX: int, startY: int, maze: list[list[str]]) -> None:
-		self.CHARACTERS = {
+		self.CHARACTERS = {key:f"\033[36m{pos}\033[0m" for key, pos in {
 			'w': '⇑',
 			'a': '⇐',
 			's': '⇓',
 			'd': '⇒'
-		}
+		}.items()}
 
 		self.char = self.CHARACTERS['w']
 
