@@ -8,21 +8,25 @@ import os
 import time
 import datetime
 
-CLEAR = 'clear' # 'cls'/'clear' based on your OS
+CLEAR = 'cls' # 'cls'/'clear' based on your OS
 
 while True:
     try:
         width = int(input('Screen Width: '))
+        if width <= 2:
+            raise ValueError
         break
     except ValueError:
-        print('Please input an integer!')
+        print('Please input an integer or a number higher than 2!')
 
 while True:
     try:
         height = int(input('Screen Height: '))
+        if height <= 3:
+            raise ValueError
         break
     except ValueError:
-        print('Please input an integer!')
+        print('Please input an integer or a number higher than 3!')
 
 while True:
     try:
